@@ -1,0 +1,51 @@
+// ALGORITHM three_nb_add
+// VAR
+//     num1,num2,num3 :INTEGER;
+//     sum : INTEGER :=0;
+// BEGIN
+//     Read(num1)
+//     Read(num2)
+//     Read(num3)
+//     sum :=num1 + num2 + num3;
+//     Write (sum)
+// END
+
+BEGIN
+
+
+lengthCounter := 0
+wordCounter := 1
+vowelCounter := 0
+
+
+character := ReadCharacter()
+
+
+WHILE (character != '.') DO
+   
+    lengthCounter := lengthCounter + 1
+
+
+    IF (character == ' ') THEN
+        wordCounter := wordCounter + 1
+    END_IF
+
+    // Check for vowels 
+    IF (character == 'a' OR character == 'e' OR character == 'i' OR character == 'o' OR character == 'u' OR
+        character == 'A' OR character == 'E' OR character == 'I' OR character == 'O' OR character == 'U') THEN
+        vowelCounter := vowelCounter + 1
+    END_IF
+
+    // Read the next character
+    character := ReadCharacter()
+END_WHILE
+
+// Increment length counter for the period
+lengthCounter := lengthCounter + 1
+
+// Output the results
+Write("Sentence Length: ", lengthCounter)
+Write("Word Count: ", wordCounter)
+Write("Vowel Count: ", vowelCounter)
+
+END
